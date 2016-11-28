@@ -6,7 +6,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-module.exports = router;
 
 
 var mongoose = require('mongoose');
@@ -66,7 +65,7 @@ router.put('/posts/:post/upvote',function(req,res,next){
 });
 
 
-router.post('posts/:post/comments',function(req,res,next){
+router.post('/posts/:post/comments',function(req,res,next){
   var comment = new Comment(req.body);
   comment.post = req.post;
   comment.save(function(err,comment){
@@ -84,9 +83,9 @@ router.post('posts/:post/comments',function(req,res,next){
 });
 
 router.put('/posts/:post/comments/:comment/upvote',function(req,res,next){
-  req.post.upvote(function(err,post){
+  req.comment.upvote(function(err,comment){
     if(err){return next(err);}
-    res.json(post);
+    res.json(comment);
 
   });
 });
@@ -105,3 +104,7 @@ router.param('comment',function(req,res,next,id){
     return next();
   });
 });
+
+
+
+module.exports = router;
