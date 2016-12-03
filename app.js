@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
+var passport = require('passport');
 require('./models/Posts');
 require('./models/Comments');
+require('./models/Users');
+require('./config/passport')
 mongoose.connect('mongodb://localhost/news');
 var express = require('express');
 var path = require('path');
@@ -27,6 +30,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(passport.initialize());
+
 app.use('/', index);
 app.use('/users', users);
 
@@ -49,3 +54,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
