@@ -57,6 +57,7 @@ var mockPost = {
     }));
 
 
+
 it('aantal comments bij een post is correct',function(){
     expect(scope.post.comments.length).toBe(2);
 });
