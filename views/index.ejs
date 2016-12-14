@@ -15,7 +15,7 @@
 <body ng-app="flapperNews">
 <nav class="navbar navbar-default pull-right" ng-controller="NavCtrl">
     <ul class="nav navbar-nav">
-      <li ng-show="isLoggedIn()"><a>{{ currentUser() }}</a></li>
+      <li ng-show="isLoggedIn()"><a><mijn-directive>{{ currentUser() }}</mijn-directive></a></li>
       <li ng-show="isLoggedIn()"><a href="" ng-click="logOut()">Log Out</a></li>
       <li ng-hide="isLoggedIn()"><a href="/#/login">Log In</a></li>
       <li ng-hide="isLoggedIn()"><a href="/#/register">Register</a></li>
@@ -29,7 +29,7 @@
 
   <script type="text/ng-template" id="/home.html">
     <div class="page-header">
-      <h1>Flapper News</h1>
+    <h1>Flapper News</h1>      
     </div>
 
 
@@ -174,7 +174,7 @@
 
 </body>
 
-</html>-->
+</html>
 
 
 

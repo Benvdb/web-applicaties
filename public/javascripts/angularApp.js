@@ -94,13 +94,6 @@ o.addComment = function(id,comment) {
     });
 };
 
-
-/*
-o.upvoteComment = function(post,comment){
-    return $http.put('/posts/' + post._id + '/comments/' + comment._id + '/upvote').success(function(data){
-        comment.upvotes += 1;
-    });
-};*/
 o.upvoteComment = function(post, comment) {
 		return $http.put('/posts/' + post._id + '/comments/' + comment._id + '/upvote',null,{
             headers:{Authorization: 'Bearer ' + auth.getToken()}
@@ -184,11 +177,7 @@ $scope.addPost = function() {
      posts.create({
           title: $scope.title,
         link: $scope.link
-       /* upvotes: 0,
-        comments: [
-            {author:'Joe', body:'cool post',upvotes:0},
-            {author:'Bob',body:'Great idea',upvotes:0}
-        ]*/
+    
       });
       $scope.title = '';
       $scope.link = '';
@@ -264,5 +253,15 @@ function($scope, auth){
   $scope.currentUser = auth.currentUser;
   $scope.logOut = auth.logOut;
 }]);
+
+app.directive('mijnDirective',function(){
+    return {
+        restrict: 'E',
+        transclude: true,
+        template: '<font color="#00ff00"><ng-transclude></ng-transclude></font>'
+    };
+    
+
+});
 
 
