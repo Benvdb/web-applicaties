@@ -78,7 +78,7 @@ router.delete('/posts/:post', function(req, res) {
 	}, function(err, post) {
 		if (err) { return next(err); }
 		
-		// get and return all the posts after you delete one
+		
 		Post.find(function(err, posts) {
 			if (err) { return next(err); }
 			
@@ -86,7 +86,7 @@ router.delete('/posts/:post', function(req, res) {
 		});
 	});
 });
-//
+
 router.put('/posts/:post/upvote',auth,function(req,res,next){
   req.post.upvote(function(err,post){
     if(err){return next(err);}

@@ -177,12 +177,16 @@ function($scope,posts,auth){
 
 $scope.posts = posts.posts;
 
+$scope.verifyAuthor = function(post){
+   return post.author === auth.currentUser();
+};
 $scope.addPost = function() {
       if (!$scope.title || $scope.title === '') {
         return;
       }
      posts.create({
           title: $scope.title,
+          author: 'payload.username',
         link: $scope.link
     
       });
