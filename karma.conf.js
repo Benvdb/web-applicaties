@@ -1,6 +1,6 @@
 // Karma configuration
 // Generated on Sun Dec 11 2016 12:27:12 GMT+0100 (Romance (standaardtijd))
-
+//gekopieerd van internet mits enkele aanpassingen
 module.exports = function(config) {
   config.set({
 

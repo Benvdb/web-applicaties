@@ -40,6 +40,7 @@ describe('MainCtrl', function () {
         expect(scope.isLoggedIn).toBe(false);
     });
 
+
     
     
     
