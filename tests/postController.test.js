@@ -65,10 +65,6 @@ it('aantal upvotes bij een post is correct',function(){
     expect(scope.post.upvotes).toBe(3);
 });
 
-it('blba',function(){
-    incrementUpvotes(mockPost);
-    expect(mockPost.upvotes).toBe(4);
-});
 
     
     
