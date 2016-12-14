@@ -154,7 +154,7 @@ o.upvoteComment = function(post, comment) {
     };
 
     return auth;
-}])
+}]);
 
 
 
@@ -173,7 +173,7 @@ $scope.posts = posts.posts;
 $scope.addPost = function() {
       if (!$scope.title || $scope.title === '') {
         return;
-      };
+      }
      posts.create({
           title: $scope.title,
         link: $scope.link
@@ -239,8 +239,8 @@ app.controller('AuthCtrl',[
                 $scope.error = error;
             }).then(function(){
                 $state.go('home');
-            })
-        }
+            });
+        };
     }
 ]);
 

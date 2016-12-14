@@ -3,7 +3,7 @@ var passport = require('passport');
 require('./models/Posts');
 require('./models/Comments');
 require('./models/Users');
-require('./config/passport')
+require('./config/passport');
 //mongoose.connect('mongodb://localhost/news');
 /////////////////////////////////////////////////////////////////////////////////////////////
 mongoose.connect('mongodb://flapper:flapper@ds053186.mlab.com:53186/flappernewsbenvdb');
