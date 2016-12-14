@@ -33,7 +33,7 @@ gulp.task('develop', function() {
    nodemon(
        {
            script: 'app.js',
-           ext: 'html js css json',
+           ext: 'ejs js css json',
            ignore: ['gulpfile.js'],
            tasks: ['jshint']
        })

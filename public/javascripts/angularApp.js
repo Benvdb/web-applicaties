@@ -88,6 +88,13 @@ o.get = function(id){
     });
 };
 
+
+o.delete = function(post) {
+		return $http.delete('/posts/' + post._id).success(function(data) {
+			angular.copy(data, o.posts);
+		});
+	}
+
 o.addComment = function(id,comment) {
     return $http.post('/posts/' + id + '/comments', comment,{
         headers:{Authorization: 'Bearer ' + auth.getToken()}
@@ -182,6 +189,11 @@ $scope.addPost = function() {
       $scope.title = '';
       $scope.link = '';
     };
+
+
+    $scope.deletePost = function(post) {
+		posts.delete(post);
+	}
 
 $scope.incrementUpvotes = function(post){
     posts.upvote(post);

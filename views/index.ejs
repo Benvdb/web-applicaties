@@ -50,8 +50,12 @@
             <span>
                 <a href="#/posts/{{post._id}}">comments</a>
             </span>
+            <span style="float: right;" ng-click="deletePost(post)">
+				<a href="#"> Delete </a>
+			</span>
       </span>
     </div>
+    
 <div ng-hide="isLoggedIn()">
   <h3>You need to <a href="/#/login">Log In</a> or <a href="/#/register">Register</a> before you can add a post.</h3>
 </div>
